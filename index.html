@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زود کوک | سفارش آنلاین غذا</title>
+    <meta name="description" content="سفارش آنلاین غذا با تحویل سریع از رستوران زود کوک">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-logo">
+                <div class="logo-circle"></div>
+                <div class="logo-image"></div>
+            </div>
+            <h1 class="splash-title"><span class="text-yellow">زود</span> کوک</h1>
+            <p class="splash-subtitle">طعم‌های خاص، سرویس سریع</p>
+            <div class="splash-loading">
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <p class="loading-text">در حال آماده‌سازی منو...</p>
+            </div>
+            <button id="skip-splash" class="skip-button">رد کردن</button>
+        </div>
+        <div class="splash-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+            <div class="decoration-circle circle-4"></div>
+            <div class="food-icon food-icon-1">🍕</div>
+            <div class="food-icon food-icon-2">🍔</div>
+            <div class="food-icon food-icon-3">🍗</div>
+            <div class="food-icon food-icon-4">🥗</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <i data-feather="phone"></i>
+                    <span>تماس: ۰۹۱۲۳۴۵۶۷۸۹</span>
+                </div>
+                <p>ارسال رایگان برای سفارش‌های بالای ۲۰۰ هزار تومان</p>
+                <div class="top-links">
+                    <a href="#" class="top-link">درباره ما</a>
+                    <a href="#" class="top-link">تماس با ما</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="menu-left">
+                    <button class="menu-toggle" id="menu-toggle">
+                        <i data-feather="menu"></i>
+                    </button>
+                    <a href="#" class="logo">
+                        <span class="logo-highlight">زود</span> کوک
+                    </a>
+                    <nav class="desktop-nav">
+                        <ul>
+                            <li><a href="#" class="active">صفحه اصلی</a></li>
+                            <li><a href="#">منو</a></li>
+                            <li><a href="#">درباره ما</a></li>
+                            <li><a href="#">تماس با ما</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="menu-right">
+                    <div class="search-container">
+                        <button class="icon-button search-toggle" id="search-toggle">
+                            <i data-feather="search"></i>
+                        </button>
+                        <div class="search-box" id="search-box">
+                            <input type="search" placeholder="جستجوی غذا...">
+                            <button class="search-close">&times;</button>
+                        </div>
+                    </div>
+                    <a href="#" class="icon-button cart-button">
+                        <i data-feather="shopping-cart"></i>
+                        <span class="cart-badge">2</span>
+                    </a>
+                    <a href="#" class="icon-button">
+                        <i data-feather="user"></i>
+                    </a>
+                    <a href="https://zodcook.github.io/login/" class="login-button">ورود / ثبت نام</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="logo-highlight">زود</span> کوک
+            <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#" class="active">صفحه اصلی</a></li>
+                <li><a href="#">منو</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">تماس با ما</a></li>
+                <li><a href="https://zodcook.github.io/login/">ورود / ثبت نام</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Slider -->
+        <section class="slider-section">
+            <div class="slider" id="main-slider">
+                <div class="slide active">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-image" style="background-image: url('https://placehold.co/1200x500');"></div>
+                    <div class="slide-content">
+                        <h1 class="slide-title">غذاهای لذیذ ایرانی</h1>
+                        <p class="slide-description">طعم‌های اصیل و خاطره‌انگیز</p>
+                        <a href="#" class="order-button">سفارش آنلاین</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-image" style="background-image: url('https://placehold.co/1200x500');"></div>
+                    <div class="slide-content">
+                        <h1 class="slide-title">تخفیف ویژه آخر هفته</h1>
+                        <p class="slide-description">۲۰٪ تخفیف برای سفارش‌های بالای ۳۰۰ هزار تومان</p>
+                        <a href="#" class="order-button">سفارش آنلاین</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-image" style="background-image: url('https://placehold.co/1200x500');"></div>
+                    <div class="slide-content">
+                        <h1 class="slide-title">ارسال سریع و رایگان</h1>
+                        <p class="slide-description">برای سفارش‌های بالای ۲۰۰ هزار تومان</p>
+                        <a href="#" class="order-button">سفارش آنلاین</a>
+                    </div>
+                </div>
+                
+                <!-- Slider Controls -->
+                <div class="slider-dots">
+                    <button class="slider-dot active" data-slide="0"></button>
+                    <button class="slider-dot" data-slide="1"></button>
+                    <button class="slider-dot" data-slide="2"></button>
+                </div>
+                
+                <button class="slider-arrow slider-prev">
+                    <i data-feather="chevron-right"></i>
+                </button>
+                <button class="slider-arrow slider-next">
+                    <i data-feather="chevron-left"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Menu Categories -->
+        <section class="menu-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">منوی ما</h2>
+                    <a href="#" class="view-all">
+                        مشاهده همه
+                        <i data-feather="chevron-left"></i>
+                    </a>
+                </div>
+
+                <div class="menu-tabs">
+                    <div class="tabs-list">
+                        <button class="tab-button active" data-tab="main">غذای اصلی</button>
+                        <button class="tab-button" data-tab="appetizer">پیش غذا</button>
+                        <button class="tab-button" data-tab="dessert">دسر</button>
+                        <button class="tab-button" data-tab="drink">نوشیدنی</button>
+                    </div>
+
+                    <div class="tab-content active" id="tab-main">
+                        <div class="food-grid">
+                            <div class="food-card">
+                                <div class="food-image">
+                                    <img src="https://placehold.co/200x200" alt="کباب مخصوص">
+                                    <div class="food-overlay"></div>
+                                    <button class="add-to-cart">افزودن به سبد</button>
+                                </div>
+                                <div class="food-details">
+                                    <div class="food-header">
+                                        <h3 class="food-name">کباب مخصوص</h3>
+                                        <span class="food-price">120,000 تومان</span>
+                                    </div>
+                                    <p class="food-description">گوشت کباب شده با ادویه مخصوص</p>
+                                </div>
+                            </div>
+                            <div class="food-card">
+                                <div class="food-image">
+                                    <img src="https://placehold.co/200x200" alt="مرغ کاری">
+                                    <div class="food-overlay"></div>
+                                    <button class="add-to-cart">افزودن به سبد</button>
+                                </div>
+                                <div class="food-details">
+                                    <div class="food-header">
+                                        <h3 class="food-name">مرغ کاری</h3>
+                                        <span class="food-price">95,000 تومان</span>
+                                    </div>
+                                    <p class="food-description">خوراک مرغ تند با برنج</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-appetizer">
+                        <div class="food-grid">
+                            <div class="food-card">
+                                <div class="food-image">
+                                    <img src="https://placehold.co/200x200" alt="سالاد الویه">
+                                    <div class="food-overlay"></div>
+                                    <button class="add-to-cart">افزودن به سبد</button>
+                                </div>
+                                <div class="food-details">
+                                    <div class="food-header">
+                                        <h3 class="food-name">سالاد الویه</h3>
+                                        <span class="food-price">65,000 تومان</span>
+                                    </div>
+                                    <p class="food-description">سالاد سیب زمینی تازه با سبزیجات</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-dessert">
+                        <div class="food-grid">
+                            <div class="food-card">
+                                <div class="food-image">
+                                    <img src="https://placehold.co/200x200" alt="بستنی زعفرانی">
+                                    <div class="food-overlay"></div>
+                                    <button class="add-to-cart">افزودن به سبد</button>
+                                </div>
+                                <div class="food-details">
+                                    <div class="food-header">
+                                        <h3 class="food-name">بستنی زعفرانی</h3>
+                                        <span class="food-price">45,000 تومان</span>
+                                    </div>
+                                    <p class="food-description">بستنی سنتی با زعفران و پسته</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-drink">
+                        <div class="food-grid">
+                            <div class="food-card">
+                                <div class="food-image">
+                                    <img src="https://placehold.co/200x200" alt="دوغ">
+                                    <div class="food-overlay"></div>
+                                    <button class="add-to-cart">افزودن به سبد</button>
+                                </div>
+                                <div class="food-details">
+                                    <div class="food-header">
+                                        <h3 class="food-name">دوغ</h3>
+                                        <span class="food-price">25,000 تومان</span>
+                                    </div>
+                                    <p class="food-description">دوغ تازه با نعناع</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title text-center">چرا ما را انتخاب کنید؟</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i data-feather="clock"></i>
+                        </div>
+                        <h3 class="feature-title">تحویل سریع</h3>
+                        <p class="feature-description">غذای شما در کمترین زمان ممکن به دست شما می‌رسد</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i data-feather="shield"></i>
+                        </div>
+                        <h3 class="feature-title">کیفیت عالی</h3>
+                        <p class="feature-description">استفاده از مواد اولیه تازه و با کیفیت در تهیه غذاها</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i data-feather="credit-card"></i>
+                        </div>
+                        <h3 class="feature-title">پرداخت آسان</h3>
+                        <p class="feature-description">پرداخت آنلاین یا درب منزل به انتخاب شما</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Order -->
+        <section class="how-to-order">
+            <div class="container">
+                <h2 class="section-title text-center">چگونه سفارش دهیم؟</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">۱</div>
+                        <h3 class="step-title">انتخاب غذا</h3>
+                        <p class="step-description">منوی ما را مرور کنید و غذای مورد علاقه خود را انتخاب کنید</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">۲</div>
+                        <h3 class="step-title">ثبت سفارش</h3>
+                        <p class="step-description">غذاها را به سبد خرید اضافه کنید و سفارش خود را نهایی کنید</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">۳</div>
+                        <h3 class="step-title">دریافت غذا</h3>
+                        <p class="step-description">غذای شما در اسرع وقت به دست شما خواهد رسید</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offer -->
+        <section class="special-offer">
+            <div class="container">
+                <div class="offer-content">
+                    <h2 class="offer-title">تخفیف ویژه برای اولین سفارش!</h2>
+                    <p class="offer-description">
+                        با استفاده از کد تخفیف <span class="offer-code">FIRST20</span> از ۲۰٪ تخفیف در اولین سفارش خود بهره‌مند شوید.
+                    </p>
+                    <a href="#" class="offer-button">سفارش با تخفیف</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title text-center">نظرات مشتریان</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar"></div>
+                            <div>
+                                <h4 class="testimonial-name">علی محمدی</h4>
+                                <div class="testimonial-rating">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            کیفیت غذاهای زود کوک عالی بود و خیلی سریع به دستم رسید. حتما دوباره سفارش خواهم داد.
+                        </p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar"></div>
+                            <div>
+                                <h4 class="testimonial-name">مریم حسینی</h4>
+                                <div class="testimonial-rating">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            طعم غذاهای زود کوک فوق‌العاده بود. بسته‌بندی تمیز و مرتب. از خرید خودم راضی هستم.
+                        </p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar"></div>
+                            <div>
+                                <h4 class="testimonial-name">رضا کریمی</h4>
+                                <div class="testimonial-rating">★★★★☆</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            کیفیت غذاها خوب بود. فقط کمی در ارسال تاخیر داشت. در کل از زود کوک راضی بودم.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <div class="newsletter-content">
+                    <h3 class="newsletter-title">عضویت در خبرنامه</h3>
+                    <p class="newsletter-description">برای اطلاع از آخرین تخفیف‌ها و جشنواره‌های زود کوک در خبرنامه ما عضو شوید</p>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="ایمیل خود را وارد کنید" class="newsletter-input">
+                    <button class="newsletter-button">عضویت</button>
+                </div>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title"><span class="text-orange">زود</span> کوک</h3>
+                    <p class="footer-description">
+                        سفارش آنلاین غذا با تحویل سریع به درب منزل شما. سفارش آنلاین برای تجربه غذایی آسان و لذت‌بخش.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-feather="facebook"></i></a>
+                        <a href="#" class="social-link"><i data-feather="instagram"></i></a>
+                        <a href="#" class="social-link"><i data-feather="twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">دسترسی سریع</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">صفحه اصلی</a></li>
+                        <li><a href="#">منو</a></li>
+                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="#">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">خدمات مشتریان</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">سوالات متداول</a></li>
+                        <li><a href="#">اطلاعات ارسال</a></li>
+                        <li><a href="#">قوانین و مقررات</a></li>
+                        <li><a href="#">حریم خصوصی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">تماس با ما</h3>
+                    <address class="footer-address">
+                        <p>خیابان غذا، پلاک ۱۲۳</p>
+                        <p>تهران، ایران</p>
+                        <p>ایمیل: info@zoodcook.ir</p>
+                        <p>تلفن: ۰۹۱۲۳۴۵۶۷۸۹</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="current-year"></span> زود کوک. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
